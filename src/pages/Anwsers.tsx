@@ -287,7 +287,7 @@ function TotalRow(props: TotalRowProps) {
       <div className="flex gap-0.5 items-center">
         {timeTotals?.map((time, index) => {
           const percentage =
-            (time.yes + time.maybe / 2) / (time.yes + time.no + time.maybe / 2);
+            (time.yes + time.maybe / 2) / (time.yes + time.no + time.maybe);
 
           const lerp = (start: number, end: number, t: number) => {
             return (1 - t) * start + t * end;
