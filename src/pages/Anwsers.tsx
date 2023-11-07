@@ -154,6 +154,16 @@ function InputRow(props: InputRowProps) {
   }, [data]);
 
   const handleSubmit = async () => {
+    if (name === "") {
+      alert("Name cannot be empty");
+      return;
+    }
+
+    const isSure = confirm("Are you sure you want to submit?");
+    if (!isSure) {
+      return;
+    }
+
     const data = {} as { [key: string]: object };
     data[`responses.${name}`] = times.map((time) => ({
       start: time.start,
