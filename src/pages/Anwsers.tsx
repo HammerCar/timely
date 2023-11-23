@@ -75,7 +75,9 @@ function TitleRow(props: TitleRowProps) {
     const start = new Date(time.start.seconds * 1000);
     const end = new Date(time.end.seconds * 1000);
 
-    const day = `${start.getDate()}.${start.getMonth()}.${start.getFullYear()}`;
+    const day = `${start.getDate()}.${
+      start.getMonth() + 1
+    }.${start.getFullYear()}`;
 
     if (acc[day] === undefined) {
       acc[day] = [];
